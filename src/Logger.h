@@ -27,6 +27,7 @@ public:
 	{
 		public:
 
+		cAttachment() : m_listener(nullptr) {}
 		cAttachment(cAttachment && a_other)
 			: m_listener(a_other.m_listener)
 		{
@@ -34,7 +35,7 @@ public:
 
 		~cAttachment()
 		{
-			cLogger::GetInstance().DetachListener(m_listener);
+			if (m_listener != nullptr) cLogger::GetInstance().DetachListener(m_listener);
 		}
 
 		private:
