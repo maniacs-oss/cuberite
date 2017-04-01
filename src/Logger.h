@@ -35,7 +35,8 @@ public:
 
 		~cAttachment()
 		{
-			if (m_listener != nullptr) {
+			if (m_listener != nullptr)
+			{
 				cLogger::GetInstance().DetachListener(m_listener);
 			}
 		}
