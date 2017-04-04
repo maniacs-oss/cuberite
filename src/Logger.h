@@ -40,6 +40,8 @@ public:
 				cLogger::GetInstance().DetachListener(m_listener);
 			}
 		}
+		
+		cAttachment& operator=(cAttachment&& a_other) = default;
 
 		private:
 
